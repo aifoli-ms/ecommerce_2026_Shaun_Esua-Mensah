@@ -1,0 +1,46 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 30px;
+	color: #222;
+}
+
+nav {
+	margin-bottom: 20px;
+}
+
+form {
+	max-width: 480px;
+}
+
+label {
+	display: block;
+	margin-top: 12px;
+	font-weight: bold;
+}
+
+input,
+select,
+textarea {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 8px;
+	margin-top: 4px;
+}
+
+button {
+	margin-top: 16px;
+	padding: 10px 16px;
+	cursor: pointer;
+}
+
+.error-message,
+.field-error {
+	color: #b00020;
+}
+
+.field-error {
+	display: block;
+	min-height: 18px;
+	font-size: 14px;
+	margin-top: 3px;
+}
