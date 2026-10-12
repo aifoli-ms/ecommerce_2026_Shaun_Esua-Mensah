@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		var isValid = true;
 		var emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
 		var phoneRegex = /^[0-9+\-\s]{7,15}$/;
-		var passwordRegex = /^(?=.*[0-9]).{8,}$/;
+		var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9\s]).{8,}$/;
 
 		clearErrors();
 
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			showError("customer_pass", "Password is required.");
 			isValid = false;
 		} else if (!passwordRegex.test(password)) {
-			showError("customer_pass", "Use at least 8 characters and one digit.");
+			showError("customer_pass", "Use at least 8 characters, including an uppercase letter, a lowercase letter, a number, and a special character.");
 			isValid = false;
 		}
 

@@ -59,4 +59,10 @@ class CustomerController
         ];
     }
 
+    // Return the details displayed on a customer's account page.
+    public function getCustomerById($customerId)
+    {
+        return $this->customer->getCustomerById($customerId);
+    }
+
 }

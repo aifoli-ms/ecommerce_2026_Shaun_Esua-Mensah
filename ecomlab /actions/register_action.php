@@ -70,9 +70,10 @@ if (!preg_match('/^[0-9+\-\s]{7,15}$/', $contact)) {
     failRegistration("Please enter a valid contact number.");
 }
 
-// Require at least eight password characters and one number.
-if (strlen($pass) < 8 || !preg_match('/[0-9]/', $pass)) {
-    failRegistration("Password must be at least 8 characters and include one digit.");
+// Require at least eight characters with uppercase, lowercase, a number, and a special character.
+$passwordRegex = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9\s]).{8,}$/';
+if (!preg_match($passwordRegex, $pass)) {
+    failRegistration("Password must be at least 8 characters and include an uppercase letter, a lowercase letter, a number, and a special character.");
 }
 
 
@@ -92,7 +93,8 @@ $result = $controller->register([
 if ($result["success"]) {
     $_SESSION["customer_id"] = $result["customer_id"];
     $_SESSION["user_role"] = 2;
-    redirect("../view/account/my_account.php");
+    $_SESSION["success"] = "Registration successful. Welcome to your account!";
+    redirect(app_url("view/account/my_account.php"));
 }
 
 // Registration failed. Show the controller's error on the form.

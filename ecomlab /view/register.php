@@ -16,9 +16,7 @@ unset($_SESSION["error"]);
 <body>
 	<h1>Customer Registration</h1>
 
-	<nav>
-		<a href="../index.php">Home</a>
-	</nav>
+	<?php require __DIR__ . "/../views/layout/header.php"; ?>
 
 	<?php if ($error !== "") { ?>
 		<p class="error-message"><?php echo htmlspecialchars($error); ?></p>

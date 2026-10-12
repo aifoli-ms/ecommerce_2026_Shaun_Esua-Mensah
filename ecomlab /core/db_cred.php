@@ -6,7 +6,7 @@
 // define() creates a global constant - a named value that cannot
 // be changed anywhere else in the app once it is set here.
 
-define("DATABASE", ""); // name of the database to connect to
+define("DATABASE", "shoppn"); // name of the database to connect to
 define("SERVER", "localhost"); // where the database server is running
 define("USERNAME", "root");    // MySQL username
 define("PASSWD", "");          // MySQL password (empty for local XAMPP by default)

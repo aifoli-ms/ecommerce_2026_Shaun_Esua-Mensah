@@ -22,6 +22,27 @@ class CustomerClass extends Database
         return $this->fetchOne($sql, [$email]);
     }
 
+    // Find the public account details for one customer.
+    public function getCustomerById($customerId)
+    {
+        $sql = "
+            SELECT
+                customer_id,
+                customer_name,
+                customer_email,
+                customer_country,
+                customer_city,
+                customer_contact,
+                customer_image,
+                user_role
+            FROM customer
+            WHERE customer_id = ?
+            LIMIT 1
+        ";
+
+        return $this->fetchOne($sql, [$customerId]);
+    }
+
     // Check the submitted password against the saved hash.
     public function login($email, $pass)
     {
