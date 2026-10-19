@@ -34,6 +34,21 @@ nav {
 	color: #dfeceb;
 }
 
+.cart-summary {
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+	width: min(100%, 1080px);
+	padding: 0 0 12px;
+	margin: 0 auto;
+	font-size: 0.9rem;
+}
+
+.cart-message {
+	margin-top: -20px;
+	margin-bottom: 24px;
+}
+
 .nav-inner {
 	display: flex;
 	align-items: center;
@@ -276,6 +291,62 @@ table {
 	margin-top: 16px;
 	width: 100%;
 	max-width: 720px;
+}
+
+.cart-page {
+	padding-bottom: 60px;
+}
+
+.cart-form,
+.cart-table {
+	max-width: none;
+}
+
+.cart-table th,
+.cart-table td {
+	padding: 12px;
+	border: 1px solid var(--line);
+	text-align: left;
+	vertical-align: middle;
+}
+
+.cart-table input[type="checkbox"] {
+	width: auto;
+}
+
+.cart-product-image {
+	display: block;
+	width: 72px;
+	height: 72px;
+	object-fit: cover;
+}
+
+.cart-quantity {
+	width: 76px;
+}
+
+.cart-subtotal th {
+	text-align: right;
+}
+
+.cart-actions {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.cart-actions a {
+	margin-top: 16px;
+	color: var(--green);
+}
+
+.cart-actions .cart-checkout {
+	padding: 10px 18px;
+	border-radius: 3px;
+	background: var(--green);
+	color: #fff;
+	text-decoration: none;
 }
 
 .store-layout {

@@ -48,6 +48,18 @@ function app_url($path = "")
     return rtrim($basePath, "/") . "/" . ltrim($path, "/");
 }
 
+// Return the visitor address used to identify a guest shopping cart.
+function get_ip()
+{
+    $ip = $_SERVER["REMOTE_ADDR"] ?? "";
+
+    if (filter_var($ip, FILTER_VALIDATE_IP)) {
+        return $ip;
+    }
+
+    return "0.0.0.0";
+}
+
 // Check whether a customer is logged in.
 function is_logged_in()
 {
@@ -80,4 +92,3 @@ function require_admin()
         redirect(app_url("index.php"));
     }
 }
-

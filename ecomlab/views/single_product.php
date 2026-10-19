@@ -40,7 +40,7 @@ try {
 						<p class="product-price">GHS <?php echo htmlspecialchars(number_format((float) $product["product_price"], 2), ENT_QUOTES, "UTF-8"); ?></p>
 						<p><?php echo nl2br(htmlspecialchars($product["product_desc"], ENT_QUOTES, "UTF-8")); ?></p>
 						<p><strong>Keywords:</strong> <?php echo htmlspecialchars($product["product_keywords"], ENT_QUOTES, "UTF-8"); ?></p>
-						<a class="action-link" href="<?php echo htmlspecialchars(app_url("index.php") . "?add_cart=" . urlencode($product["product_id"]), ENT_QUOTES, "UTF-8"); ?>">Add to Cart</a>
+						<a class="action-link" href="<?php echo htmlspecialchars(app_url("actions/add_to_cart_action.php") . "?add_cart=" . urlencode($product["product_id"]), ENT_QUOTES, "UTF-8"); ?>">Add to Cart</a>
 					</div>
 				</article>
 			<?php } ?>
